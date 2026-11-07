@@ -110,6 +110,15 @@ nav .wrap{max-width:1800px;display:flex;align-items:center;justify-content:space
 .cta{text-align:center;overflow:hidden;border-radius:30px;margin:0 16px;background:radial-gradient(55% 130% at 50% 130%,#10357a 0,#08183a 55%,#040814 100%);border:1px solid var(--line);padding:96px 20px}
 .cta h2{max-width:760px;margin:0 auto 14px}
 .cta p{color:var(--mut);margin-bottom:32px}
+.cta p{margin-bottom:24px}
+.offer{margin:0 auto 32px}
+.offer small{display:block;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:12px}
+.count{display:inline-flex;align-items:flex-start;gap:8px}
+.count>div{min-width:72px;padding:12px 8px 10px;border-radius:16px;background:var(--glass);border:1px solid rgba(43,157,244,.35);backdrop-filter:blur(8px)}
+.count b{display:block;font-size:2rem;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.count span{display:block;margin-top:6px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.count i{font-style:normal;font-size:1.6rem;line-height:56px;color:var(--blue)}
+@media(max-width:420px){.count>div{min-width:62px}.count b{font-size:1.7rem}}
 
 footer{padding:72px 0 0;color:var(--mut);font-size:.9rem;overflow:hidden;border-top:1px solid var(--line);margin-top:48px}
 .ft-top{display:grid;gap:36px}
@@ -315,7 +324,11 @@ nav{animation:navDown .9s .1s cubic-bezier(.2,.7,.2,1) both}
 <section style="padding:48px 0 88px">
   <div class="cta">
     <h2>Pronto para sair de carro novo?</h2>
-    <p>Faça sua simulação gratuita agora mesmo.</p>
+    <p>Só hoje estou com uma oferta especial para você. Fale comigo agora mesmo!</p>
+    <div class="offer" role="timer" aria-label="Tempo restante da oferta de hoje">
+      <small>A oferta termina em</small>
+      <div class="count"><div><b id="cd-h">00</b><span>horas</span></div><i>:</i><div><b id="cd-m">00</b><span>min</span></div><i>:</i><div><b id="cd-s">00</b><span>seg</span></div></div>
+    </div>
     <a class="btn" href="https://wa.me/5584991151280?text=Ol%C3%A1%20Anderson%2C%20quero%20simular%20um%20cons%C3%B3rcio" target="_blank" rel="noopener">Fale comigo no WhatsApp <i>↗</i></a>
   </div>
 </section>
@@ -366,6 +379,16 @@ var c=document.querySelector('.proofs'),d=0,x,l;
 c.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;d=1;x=e.clientX;l=c.scrollLeft;c.style.scrollSnapType='none';c.style.cursor='grabbing'});
 c.addEventListener('pointermove',function(e){if(d)c.scrollLeft=l-(e.clientX-x)});
 addEventListener('pointerup',function(){if(!d)return;d=0;c.style.scrollSnapType='';c.style.cursor=''});
+</script>
+<script>
+(function(){
+var h=document.getElementById('cd-h'),m=document.getElementById('cd-m'),sc=document.getElementById('cd-s');
+if(!h)return;
+function p(n){return n<10?'0'+n:''+n}
+function tick(){var n=new Date(),e=new Date(n);e.setHours(23,59,59,999);var d=Math.max(0,Math.floor((e-n)/1000));
+h.textContent=p(Math.floor(d/3600));m.textContent=p(Math.floor(d%3600/60));sc.textContent=p(d%60)}
+tick();setInterval(tick,1000);
+})();
 </script>
 </body>
 </html>
