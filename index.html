@@ -81,7 +81,10 @@ nav .wrap{max-width:1800px;display:flex;align-items:center;justify-content:space
 /* sobre */
 .about .wrap{display:grid;gap:56px;align-items:center}
 .about .pic{background:none}
-.about .pic img{display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(to bottom,#000 78%,transparent 100%),linear-gradient(to right,#000 0,#000 90%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,#000 78%,transparent 100%),linear-gradient(to right,#000 0,#000 90%,transparent 100%);mask-composite:intersect}
+.about .pic{position:relative;max-width:480px;width:100%;justify-self:center;isolation:isolate}
+.about .pic::before{content:"";position:absolute;inset:0;translate:16px 16px;border-radius:30px;border:1.5px solid rgba(43,157,244,.55);z-index:-1}
+.about .pic::after{content:"";position:absolute;inset:-40px;z-index:-2;background:radial-gradient(closest-side,rgba(43,157,244,.28),transparent);filter:blur(10px)}
+.about .pic img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:30px;border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 60px -20px rgba(0,0,0,.8),0 0 0 6px rgba(255,255,255,.04)}
 .about p{color:var(--mut);margin-bottom:14px;max-width:480px}
 .badge{display:inline-block;border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-size:.85rem;color:var(--mut);margin:6px 0 24px}
 .badge b{color:#fff;font-weight:500}
@@ -274,12 +277,14 @@ nav{animation:navDown .9s .1s cubic-bezier(.2,.7,.2,1) both}
 
 <section id="sobre" class="about">
   <div class="wrap">
-    <div class="pic"><img src="assets/about.png" width="2557" height="2112" alt="Anderson Coutinho, consultor de consórcio" loading="lazy" decoding="async"></div>
+    <div class="pic"><img src="assets/about-square.webp?v=2" width="1200" height="1200" alt="Anderson Coutinho, consultor de consórcio" loading="lazy" decoding="async"></div>
     <div>
       <h2>Anderson Coutinho</h2>
-      <div class="badge"><b>2º lugar</b> entre consultores RN/PB · Setembro 2026</div>
-      <p>Consultor de consórcio de veículos, com foco em transparência: explico taxas, prazos e regras antes de qualquer decisão.</p>
-      <p>Meu trabalho é fazer você escolher o plano certo e realizar a compra com segurança.</p>
+      <div class="badge"><b>1º lugar</b> entre consultores RN/PB · Setembro 2026</div>
+      <p>Meu nome é Anderson Coutinho, sou um dos melhores consultores a nível nacional e tenho orgulho de fazer parte do Consórcio Nacional Chevrolet, uma das grandes referências do mercado de consórcios no Brasil.</p>
+      <p>Meu compromisso é oferecer muito mais do que uma carta de crédito: é entregar estratégia, planejamento, acompanhamento e as melhores oportunidades para você conquistar seu veículo.</p>
+      <p>Seja para realizar o sonho do carro novo, trocar de veículo ou ampliar seu patrimônio, estou aqui para encontrar a melhor estratégia para o seu objetivo.</p>
+      <p><b style="color:#fff;font-weight:500">Conte comigo para transformar seu planejamento em conquista! 🚀</b><br>Anderson Coutinho | Consórcio Nacional Chevrolet.</p>
       <a class="btn" href="https://wa.me/558494743206" target="_blank" rel="noopener">Quero conversar <i>↗</i></a>
     </div>
   </div>
@@ -290,9 +295,9 @@ nav{animation:navDown .9s .1s cubic-bezier(.2,.7,.2,1) both}
     <h2>Resultados</h2>
     <p class="sub">Números reais e clientes que já saíram com o veículo.</p>
     <div class="stats">
-      <div class="stat"><b data-to="5" data-dec="0" data-pre="+R$ " data-suf=" mi">+R$ 5 mi</b><span>em cartas de crédito contempladas</span></div>
-      <div class="stat"><b data-to="2.17" data-dec="2" data-pre="R$ " data-suf=" mi">R$ 2,17 mi</b><span>em vendas em setembro de 2026</span></div>
-      <div class="stat"><b>2º lugar</b><span>entre consultores do RN e PB, setembro de 2026</span></div>
+      <div class="stat"><b data-to="30" data-dec="0" data-pre="+R$ " data-suf=" mi">+R$ 30 mi</b><span>em créditos comercializados</span></div>
+      <div class="stat"><b>Maior</b><span>índice de contemplação do Brasil</span></div>
+      <div class="stat"><b>Top</b><span>Um dos melhores consultores do Brasil</span></div>
     </div>
     <!-- Para cada entrega, troque o <div class="proof">…</div> por: <div class="proof"><img src="assets/entrega-1.webp" alt="Cliente com o veículo" loading="lazy"></div> -->
     <div class="hint">Arraste para o lado <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></div>
