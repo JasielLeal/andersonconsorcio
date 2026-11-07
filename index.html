@@ -100,6 +100,11 @@ nav .wrap{max-width:1800px;display:flex;align-items:center;justify-content:space
 .hint svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:nudge 1.6s ease-in-out infinite}
 @keyframes nudge{50%{transform:translateX(6px)}}
 .exp-title{margin:72px 0 36px;font-size:1.25rem;font-weight:500}
+.see{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:10px 18px;border:1px solid rgba(43,157,244,.4);border-radius:999px;background:var(--glass);font-size:.9rem;font-weight:500}
+.see .d{display:none}
+.see svg{width:20px;height:20px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:nudgeY 1.6s ease-in-out infinite}
+@keyframes nudgeY{50%{transform:translateY(5px)}}
+@media(min-width:860px){.see .m{display:none}.see .d{display:inline}.see svg{rotate:-90deg;animation:nudge 1.6s ease-in-out infinite}}
 .exp{display:grid;gap:36px;align-items:center}
 .exp-copy p{color:var(--mut);margin-bottom:14px;max-width:480px}
 .exp-copy b{color:#fff;font-weight:500}
@@ -111,6 +116,10 @@ nav .wrap{max-width:1800px;display:flex;align-items:center;justify-content:space
 .client b{font-weight:600;font-size:1.5rem;line-height:1.1}
 .client span{color:var(--mut);font-size:.9rem;margin-top:2px}
 .client span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--blue);margin-right:8px;vertical-align:middle}
+.exp2,.exp3{margin-top:88px}
+.stage.single{aspect-ratio:auto;width:min(100%,320px)}
+.stage.single .proof.vid{position:relative;width:100%}
+@media(min-width:860px){.exp2 .exp-media{order:-1}.exp2 .see svg{rotate:90deg}}
 .proofs{position:relative;margin-bottom:24px}
 .stage{position:relative;width:min(100%,520px);margin:0 auto;aspect-ratio:1/1.3}
 .proof{position:absolute;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);background:#060d1f;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
@@ -282,7 +291,7 @@ nav{animation:navDown .9s .1s cubic-bezier(.2,.7,.2,1) both}
     <div class="steps">
       <div class="step"><h3>Fale comigo</h3><p>Conte qual veículo quer e quanto pode investir por mês.</p></div>
       <div class="step"><h3>Receba a simulação</h3><p>Monto as melhores opções de plano para o seu perfil.</p></div>
-      <div class="step"><h3>Entre no grupo</h3><p>Adesão rápida e acompanhamento em todas as etapas.</p></div>
+      <div class="step"><h3>Entre no grupo</h3><p>Adesão rápida, com o pagamento da primeira parcela de forma facilitada e acompanhamento em todas as etapas.</p></div>
       <div class="step"><h3>Seja contemplado</h3><p>Use a carta de crédito e retire seu veículo.</p></div>
     </div>
   </div>
@@ -293,7 +302,7 @@ nav{animation:navDown .9s .1s cubic-bezier(.2,.7,.2,1) both}
     <div class="pic"><img src="assets/about-square.webp?v=3" width="1200" height="1200" alt="Anderson Coutinho, consultor de consórcio" loading="lazy" decoding="async"></div>
     <div>
       <h2>Anderson Coutinho</h2>
-      <div class="badge"><b>1º lugar</b> entre consultores RN/PB · Setembro 2026</div>
+      <div class="badge"><b>1º lugar</b> entre consultores RN/PB</div>
       <p>Meu nome é Anderson Coutinho, sou um dos melhores consultores a nível nacional e tenho orgulho de fazer parte do Consórcio Nacional Chevrolet, uma das grandes referências do mercado de consórcios no Brasil.</p>
       <p>Meu compromisso é oferecer muito mais do que uma carta de crédito: é entregar estratégia, planejamento, acompanhamento e as melhores oportunidades para você conquistar seu veículo.</p>
       <p>Seja para realizar o sonho do carro novo, trocar de veículo ou ampliar seu patrimônio, estou aqui para encontrar a melhor estratégia para o seu objetivo.</p>
@@ -319,12 +328,39 @@ nav{animation:navDown .9s .1s cubic-bezier(.2,.7,.2,1) both}
       <p>Através do meu planejamento, ela conquistou uma carta de crédito de <b>R$ 120 mil</b>, utilizando apenas <b>R$ 17 mil</b> de recurso próprio, e realizou o sonho de pegar seu Nivus 0 km!</p>
       <p>Um detalhe especial: eu estou em Natal/RN e ela no Maranhão. A distância não foi obstáculo para alcançarmos esse resultado!</p>
       <p class="sign">Sou Anderson Coutinho, e meu compromisso é transformar planejamento em conquistas!</p>
+      <div class="see"><span class="m">Veja o vídeo abaixo</span><span class="d">Veja o vídeo ao lado</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
     </div>
     <div class="exp-media"><div class="proofs"><div class="stage">
       <div class="proof vid"><video src="assets/ex1/depoimento.mp4" poster="assets/ex1/cliente-carro.webp" playsinline preload="none"></video><button type="button" class="play" aria-label="Assistir ao depoimento"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="proof feed"><img src="assets/ex1/cliente-feedback.webp" alt="Mensagem de agradecimento da cliente após conquistar o primeiro carro 0 km" loading="lazy" width="590" height="1280"></div>
     </div>    </div>
     </div>
+    </div>
+    <div class="exp exp2">
+    <div class="exp-copy">
+      <div class="client"><b>Guto</b><span>Caruaru/PE</span></div>
+      <p>O Guto, de Caruaru/PE, conquistou sua <b>contemplação já na segunda parcela</b>, através do meu planejamento estratégico!</p>
+      <p>Mais uma história que mostra como um planejamento bem estruturado pode transformar objetivos em conquistas.</p>
+      <p>Eu estou em Natal/RN e o Guto em Caruaru/PE. A distância nunca foi um obstáculo para oferecer um atendimento de qualidade e acompanhar cada etapa.</p>
+      <p class="sign">Sou Anderson Coutinho e ajudo pessoas de todo o Brasil a realizarem o sonho do carro novo!</p>
+      <div class="see"><span class="m">Veja o vídeo abaixo</span><span class="d">Veja o vídeo ao lado</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
+    </div>
+    <div class="exp-media"><div class="stage single">
+      <div class="proof vid"><video src="assets/ex2/depoimento2.mp4" poster="assets/ex2/capa2.jpg" playsinline preload="none"></video><button type="button" class="play" aria-label="Assistir ao depoimento do Guto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
+    </div></div>
+    </div>
+    <div class="exp exp3">
+    <div class="exp-copy">
+      <div class="client"><b>Ricardo</b><span>Natal/RN</span></div>
+      <p>O Ricardo, de Natal/RN, conquistou sua contemplação através do meu planejamento estratégico, utilizando apenas <b>30% de lance</b>!</p>
+      <p>Mais uma história que mostra como um planejamento bem estruturado pode transformar objetivos em grandes conquistas.</p>
+      <p>Dessa vez, aqui mesmo na minha cidade, acompanhando de perto cada etapa dessa realização.</p>
+      <p class="sign">Sou Anderson Coutinho e ajudo pessoas de todo o Brasil a realizarem o sonho do carro novo!</p>
+      <div class="see"><span class="m">Veja o vídeo abaixo</span><span class="d">Veja o vídeo ao lado</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
+    </div>
+    <div class="exp-media"><div class="stage single">
+      <div class="proof vid"><video src="assets/ex3/depoimento3.mp4" poster="assets/ex3/capa3.jpg" playsinline preload="none"></video><button type="button" class="play" aria-label="Assistir ao depoimento do Ricardo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
+    </div></div>
     </div>
   </div>
 </section>
@@ -396,8 +432,8 @@ var t=setInterval(tick,1000);tick();
 })();
 </script>
 <script>
-(function(){var w=document.querySelector('.proof.vid');if(!w)return;var v=w.querySelector('video'),b=w.querySelector('.play');
-b.addEventListener('click',function(){v.controls=true;b.style.display='none';v.play()});})();
+(function(){document.querySelectorAll('.proof.vid').forEach(function(w){var v=w.querySelector('video'),b=w.querySelector('.play');
+b.addEventListener('click',function(){document.querySelectorAll('.proof.vid video').forEach(function(o){if(o!==v)o.pause()});v.controls=true;b.style.display='none';v.play()})})})();
 </script>
 <script>
 (function(){var s=document.querySelector('.stage');if(!s)return;
