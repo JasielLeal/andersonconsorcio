@@ -99,6 +99,18 @@ nav .wrap{max-width:1800px;display:flex;align-items:center;justify-content:space
 .hint{display:flex;align-items:center;gap:10px;color:var(--mut);font-size:.9rem;margin-bottom:18px}
 .hint svg{width:22px;height:22px;stroke:var(--blue);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:nudge 1.6s ease-in-out infinite}
 @keyframes nudge{50%{transform:translateX(6px)}}
+.exp-title{margin:72px 0 36px;font-size:1.25rem;font-weight:500}
+.exp{display:grid;gap:36px;align-items:center}
+.exp-copy p{color:var(--mut);margin-bottom:14px;max-width:480px}
+.exp-copy b{color:#fff;font-weight:500}
+.exp-copy .lead{color:#fff;font-size:1.35rem;font-weight:500}
+.exp-copy .sign{color:#fff;font-weight:500;margin-top:20px;padding-left:14px;border-left:2px solid var(--blue)}
+@media(min-width:860px){.exp{grid-template-columns:1fr 1fr;gap:64px}}
+.exp-media{width:100%}
+.client{display:flex;flex-direction:column;align-items:flex-start;margin-bottom:22px}
+.client b{font-weight:600;font-size:1.5rem;line-height:1.1}
+.client span{color:var(--mut);font-size:.9rem;margin-top:2px}
+.client span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--blue);margin-right:8px;vertical-align:middle}
 .proofs{position:relative;margin-bottom:24px}
 .stage{position:relative;width:min(100%,520px);margin:0 auto;aspect-ratio:1/1.3}
 .proof{position:absolute;overflow:hidden;border-radius:var(--r);border:1px solid var(--line);background:#060d1f;box-shadow:0 30px 60px -20px rgba(0,0,0,.8)}
@@ -297,14 +309,23 @@ nav{animation:navDown .9s .1s cubic-bezier(.2,.7,.2,1) both}
     <p class="sub">Números reais e clientes que já saíram com o veículo.</p>
     <div class="stats">
       <div class="stat"><b data-to="30" data-dec="0" data-pre="+R$ " data-suf=" milhões">+R$ 30 milhões</b><span>em créditos comercializados</span></div>
-      <div class="stat"><b>Maior</b><span>índice de contemplação do Brasil</span></div>
+      <div class="stat"><b>Maior</b><span>índice de contemplação do RN/PB</span></div>
       <div class="stat"><b>Top</b><span>Um dos melhores consultores do Brasil</span></div>
     </div>
     <h3 class="exp-title">Experiência do cliente</h3>
-    <div class="proofs"><div class="stage">
+    <div class="exp">
+    <div class="exp-copy">
+      <div class="client"><b>Herlane</b><span>Maranhão</span></div>
+      <p>Através do meu planejamento, ela conquistou uma carta de crédito de <b>R$ 120 mil</b>, utilizando apenas <b>R$ 17 mil</b> de recurso próprio, e realizou o sonho de pegar seu Nivus 0 km!</p>
+      <p>Um detalhe especial: eu estou em Natal/RN e ela no Maranhão. A distância não foi obstáculo para alcançarmos esse resultado!</p>
+      <p class="sign">Sou Anderson Coutinho, e meu compromisso é transformar planejamento em conquistas!</p>
+    </div>
+    <div class="exp-media"><div class="proofs"><div class="stage">
       <div class="proof vid"><video src="assets/ex1/depoimento.mp4" poster="assets/ex1/cliente-carro.webp" playsinline preload="none"></video><button type="button" class="play" aria-label="Assistir ao depoimento"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button></div>
       <div class="proof feed"><img src="assets/ex1/cliente-feedback.webp" alt="Mensagem de agradecimento da cliente após conquistar o primeiro carro 0 km" loading="lazy" width="590" height="1280"></div>
     </div>    </div>
+    </div>
+    </div>
   </div>
 </section>
 
